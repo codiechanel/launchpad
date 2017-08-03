@@ -1,5 +1,7 @@
 # Consul start guide
 
+---
+
 ## running consule
 
 `edit /etc/dhcp/dhclient.conf`
@@ -12,8 +14,12 @@
 
 ###### we cnt edit /etc/resolv.conf directly so we should edit /etc/resolv.conf
 
-`nameserver 127        
+`nameserver 127          
 and docker bridge ip`
+
+ i forgot something
+
+---
 
 ## Start Consul
 
