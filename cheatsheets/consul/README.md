@@ -8,11 +8,11 @@
 
 `prepend domain-name-servers x.x.x.x, y.y.y.y;`
 
-## we cnt edit /etc/resolv.conf directly
+## Name servers
 
-### you should edit /etc/resolv.conf
+###### we cnt edit /etc/resolv.conf directly so we should edit /etc/resolv.conf
 
-`nameserver 127      
+`nameserver 127        
 and docker bridge ip`
 
 ## Start Consul
