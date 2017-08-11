@@ -1,4 +1,8 @@
 #!/bin/bash
+echo "install java 8 ----------------------------------------"
+sudo apt install openjdk-8-jre-headless
+echo "install docker -------------------------------------"
+curl -sSL https://raw.githubusercontent.com/codiechanel/launchpad/master/scripts/installDockerCent.sh | bash -s
 echo "addng key -------------------------------------------------------"
 vsudo apt-key adv --keyserver keyserver.ubuntu.com --recv E56151BF
 DISTRO=$(lsb_release -is | tr '[:upper:]' '[:lower:]')
