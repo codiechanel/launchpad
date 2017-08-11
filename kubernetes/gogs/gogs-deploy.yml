@@ -17,8 +17,9 @@ spec:
         - containerPort: 22
           protocol: TCP
         volumeMounts:
-        - mountPath: /data
-          name: gogs-storage
+        - name: mysql-persistent-storage
+          mountPath: /data
       volumes:
-      - name: gogs-storage
-        emptyDir: {}
+      - name: mysql-persistent-storage
+        persistentVolumeClaim:
+          claimName: mysql-pv-claim
