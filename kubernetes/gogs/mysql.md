@@ -3,6 +3,7 @@ https://raw.githubusercontent.com/kubernetes/examples/master/mysql-wordpress-pd/
 scripts/mysql.sql
 
 login to mysql cntainer
+mysql -u root -p
 execute this
 CREATE DATABASE IF NOT EXISTS gogs CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
 
