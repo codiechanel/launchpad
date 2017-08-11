@@ -3,7 +3,7 @@
 echo "install java 8 ----------------------------------------"
 sudo apt -y install openjdk-8-jre-headless
 echo "install docker -------------------------------------"
-sudo apt install docker.io
+sudo apt -y install docker.io
 echo "enable service"
 sudo systemctl enable docker
 echo "addng key -------------------------------------------------------"
