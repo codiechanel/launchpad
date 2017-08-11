@@ -8,7 +8,10 @@ echo "Make fast ---------------------------------------------------"
 sudo yum makecache fast
 echo "Staring actual docker install -------------------------------"
 sudo yum -y install docker-ce
+echo "enable service"
+sudo systemctl enable docker
 echo "Enable docker on reboot ----------------------------------"
 sudo systemctl start docker
 echo "Running sample hello world ------------------------------"
+
 sudo docker run hello-world
