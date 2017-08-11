@@ -15,9 +15,7 @@ sudo apt-get -y update
 echo "install packages -----------------------------------------"
 sudo apt-get -y install mesos marathon chronos
 echo "contanerizers -----------------------------------------"
-sudo cat <<EOF >> /etc/mesos-slave/containerizers
-docker,mesos
-EOF
+sudo echo "docker,mesos" >> /etc/mesos-slave/containerizers
 echo "starting services --------------------------------"
 sudo service zookeeper restart
 sudo service mesos-master restart
