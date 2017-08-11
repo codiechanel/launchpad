@@ -16,6 +16,13 @@ spec:
         ports:
         - containerPort: 3000
         - containerPort: 22
+          protocol: TCP
+        volumeMounts:
+        - mountPath: /data
+          name: gogs-storage
+      volumes:
+      - name: gogs-storage
+        emptyDir: {}
 ---
 kind: Service
 apiVersion: v1
