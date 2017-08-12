@@ -23,7 +23,7 @@ spec:
       volumes:
       - name: mysql-persistent-storage
         persistentVolumeClaim:
-          claimName: mysql-pv-claim
+          claimName: gogs-pv-claim
 ---
 kind: Service
 apiVersion: v1
