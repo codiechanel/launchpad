@@ -3,6 +3,8 @@ apiVersion: apps/v1beta1 # for versions before 1.6.0 use extensions/v1beta1
 kind: Deployment
 metadata:
   name: gogs
+  labels:
+    app: gogs
 spec:
   replicas: 1
   template:
@@ -29,6 +31,8 @@ kind: Service
 apiVersion: v1
 metadata:
   name: gogs-service
+  labels:
+    app: gogs
 spec:
   selector:
     app: gogs
@@ -41,6 +45,8 @@ apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
  name: gogs-ingress
+ labels:
+   app: gogs
 spec:
  rules:
    - host: gogs.192.168.1.10.nip.io
