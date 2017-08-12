@@ -42,5 +42,13 @@ echo 1 > /selinux/enforce
  sudo service apparmor statusL
 
  kubectl create -f
+ kubectl delete all -l app=gogs
 
  # dont mount to /tmp it gets deleted on reboot
+
+ cnt seem to reuse pvc 
+
+# mysql is fine....it get to restore data....
+
+gogs should still listen to 3000 in the UI..
+when you change it to 80... upon restart ....trafeik wont connect 
