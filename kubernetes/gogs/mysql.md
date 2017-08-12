@@ -1,3 +1,5 @@
+NOTE: A Deployment that configures a ReplicaSet is now the recommended way to set up replication.
+
 https://raw.githubusercontent.com/kubernetes/examples/master/mysql-wordpress-pd/mysql-deployment.yaml
 
 scripts/mysql.sql

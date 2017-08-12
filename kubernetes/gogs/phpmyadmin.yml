@@ -1,0 +1,63 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  # labels for the service
+  labels:
+    name: phpmyadmin
+    app: phpmyadmin
+  # name of the service
+  name: phpmyadmin
+spec:
+  ports:
+    # the port that this service should serve on
+    - port: 80
+  # label keys and values that must match in order to receive traffic for this service
+  selector:
+    # select pods with the name "phpmyadmin"
+    name: phpmyadmin
+---
+# Kubernetes API version
+apiVersion: v1
+# Type of "request"
+kind: Pod
+# Metadata of the "object"
+metadata:
+  # Name of the "object"
+  name: phpmyadmin
+  # Labels of the "object"
+  labels:
+    # A lable named "name" with value "phpmyadmin"
+    name: phpmyadmin
+    app: phpmyadmin
+# spec ~= Specificationsof the "object"
+spec:
+  # List of Container definitions
+  containers:
+    # The "name"/"suffix" of the container name
+    - name: phpmyadmin
+      # What Docker image to use
+      image: phpmyadmin/phpmyadmin
+      env:
+        - name: PMA_HOST
+          value: wordpress-mysql
+      # List of container ports reachable from within the cluster
+      ports:
+        - containerPort: 80
+          name: phpmyadmin
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+ name: phpmyadmin-ingress
+ labels:
+   app: phpmyadmin
+spec:
+ rules:
+   - host: sql.192.168.1.10.nip.io
+     http:
+       paths:
+         - path: /
+           backend:
+             serviceName: phpmyadmin
+             servicePort: 80
