@@ -42,3 +42,5 @@ echo 1 > /selinux/enforce
  sudo service apparmor statusL
 
  kubectl create -f
+
+ # dont mount to /tmp it gets deleted on reboot
